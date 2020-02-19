@@ -7,10 +7,14 @@
     "start": "concurrently npm:start-*",
     "start-client": "cd flit-client && npm run start",
     "start-server": "cd flit-server && npm run build && npm run start",
+    "postinstall": "concurrently npm:install-*",
+    "install-client": "cd flit-client && npm install",
+    "install-server": "cd flit-server && npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "UNLICENSED",
+  "repository": "https://github.com/jwodicka/flit",
   "devDependencies": {
     "concurrently": "^5.1.0"
   }
