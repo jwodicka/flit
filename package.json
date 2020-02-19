@@ -1,0 +1,17 @@
+{
+  "name": "flit",
+  "version": "0.1.0",
+  "description": "The Flit project repository scripts",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently npm:start-*",
+    "start-client": "cd flit-client && npm run start",
+    "start-server": "cd flit-server && npm run build && npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
