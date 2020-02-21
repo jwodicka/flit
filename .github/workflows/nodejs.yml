@@ -18,7 +18,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: npm run build --if-present
+    - run: npm run build
+      working-directory: ./flit-server
     - run: npm test
+      working-directory: ./flit-server
+      env:
+        CI: true
+    - run: npm test
+      working-directory: ./flit-client
       env:
         CI: true
