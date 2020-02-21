@@ -56,7 +56,7 @@
         "@types/async": "3.0.2",
         "@types/bcrypt-nodejs": "0.0.31",
         "@types/body-parser": "1.19.0",
-        "@types/chai": "4.2.3",
+        "@types/chai": "4.2.9",
         "@types/compression": "1.0.1",
         "@types/concurrently": "4.1.0",
         "@types/errorhandler": "0.0.32",
