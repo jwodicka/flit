@@ -54,7 +54,7 @@
     },
     "devDependencies": {
         "@types/async": "3.0.2",
-        "@types/bcrypt-nodejs": "0.0.30",
+        "@types/bcrypt-nodejs": "0.0.31",
         "@types/body-parser": "1.17.1",
         "@types/chai": "4.2.3",
         "@types/compression": "1.0.1",
