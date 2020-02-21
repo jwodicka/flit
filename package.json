@@ -16,6 +16,6 @@
   "license": "UNLICENSED",
   "repository": "https://github.com/jwodicka/flit",
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "5.1.0"
   }
 }
