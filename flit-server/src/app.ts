@@ -1,3 +1,4 @@
+
 import express from "express";
 import compression from "compression";  // compresses requests
 import session from "express-session";
@@ -5,6 +6,7 @@ import bodyParser from "body-parser";
 import lusca from "lusca";
 import connectSqlite from "connect-sqlite3";
 import flash from "express-flash";
+import fs from "fs";
 import path from "path";
 import passport from "passport";
 import { SESSION_SECRET } from "./util/secrets";
@@ -20,6 +22,14 @@ import * as contactController from "./controllers/contact";
 
 // API keys and Passport configuration
 import * as passportConfig from "./config/passport";
+
+// SQLite needs a place to put its DB files before we get going.
+// Once we start consolidating SQLite logic, this should stay with it.
+const dbDir = path.join(__dirname, "../db");
+
+if (!fs.existsSync(dbDir)){
+    fs.mkdirSync(dbDir);
+}
 
 // Create Express server
 const app = express();
@@ -38,7 +48,7 @@ app.use(session({
     store: new SQLiteStore({
         table: "sessions",
         db: "sessions.sqlite",
-        dir: path.join(__dirname, "../db"),
+        dir: dbDir,
     }),
 }));
 app.use(passport.initialize());
