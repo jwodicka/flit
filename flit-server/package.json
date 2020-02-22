@@ -66,7 +66,7 @@
         "@types/express-session": "1.15.14",
         "@types/jest": "24.0.23",
         "@types/jquery": "3.3.31",
-        "@types/lodash": "4.14.141",
+        "@types/lodash": "4.14.149",
         "@types/lusca": "1.6.1",
         "@types/node": "12.7.8",
         "@types/node-sass": "4.11.0",
