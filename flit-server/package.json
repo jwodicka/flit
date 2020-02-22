@@ -71,7 +71,7 @@
         "@types/node": "12.7.8",
         "@types/node-sass": "4.11.0",
         "@types/nodemailer": "6.2.1",
-        "@types/passport": "1.0.1",
+        "@types/passport": "1.0.2",
         "@types/passport-facebook": "2.1.9",
         "@types/passport-local": "1.0.33",
         "@types/pug": "2.0.4",
