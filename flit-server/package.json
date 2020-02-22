@@ -68,7 +68,7 @@
         "@types/jquery": "3.3.31",
         "@types/lodash": "4.14.141",
         "@types/lusca": "1.6.1",
-        "@types/node": "12.7.8",
+        "@types/node": "12.12.28",
         "@types/node-sass": "4.11.0",
         "@types/nodemailer": "6.2.1",
         "@types/passport": "1.0.1",
