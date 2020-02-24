@@ -11,6 +11,7 @@ describe("GET /login", () => {
 
 
 // This code path is temporarily disabled.
+// It should return as part of building a username/password auth module.
 // describe("GET /forgot", () => {
 //     it("should return 200 OK", () => {
 //         return request(app).get("/forgot")
@@ -26,6 +27,7 @@ describe("GET /signup", () => {
 });
 
 // This code path is temporarily disabled.
+// It should return as part of building a username/password auth module.
 // describe("GET /reset", () => {
 //     it("should return 302 Found for redirection", () => {
 //         return request(app).get("/reset/1")
