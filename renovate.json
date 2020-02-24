@@ -1,5 +1,13 @@
 {
   "extends": [
     "config:base"
+  ],
+  "packageRules": [
+    {
+      "packagePatterns": ["@types/"],
+      "groupName": "typedefs",
+      "automerge": true,
+      "automergeType": "pr"
+    }
   ]
 }
