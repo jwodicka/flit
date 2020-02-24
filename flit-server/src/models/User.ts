@@ -1,5 +1,5 @@
 import path from "path";
-import { Sequelize, Model, DataTypes, BuildOptions } from "sequelize";
+import { Sequelize, Model, DataTypes } from "sequelize";
 
 const dbPath = path.join(__dirname, "../../db/users.sqlite");
 const sequelize = new Sequelize({dialect: "sqlite", storage: dbPath});
@@ -22,4 +22,9 @@ User.init({
     },
 }, {sequelize, tableName: "users"});
 
-User.sync();
+if (process.env.NODE_ENV !== "test") {
+    // This is hacky.
+    // We don't want to do any background async tasks while running tests.
+    // We should have a real solution to this when we properly extract DB logic.
+    User.sync();
+}

@@ -10,7 +10,9 @@
     "postinstall": "concurrently npm:install-*",
     "install-client": "cd flit-client && npm install",
     "install-server": "cd flit-server && npm install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "concurrently npm:test-*",
+    "test-client": "cd flit-client && CI=true npm test",
+    "test-server": "cd flit-server && npm test"
   },
   "author": "",
   "license": "UNLICENSED",

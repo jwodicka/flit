@@ -23,13 +23,28 @@ import * as contactController from "./controllers/contact";
 // API keys and Passport configuration
 import * as passportConfig from "./config/passport";
 
-// SQLite needs a place to put its DB files before we get going.
-// Once we start consolidating SQLite logic, this should stay with it.
-const dbDir = path.join(__dirname, "../db");
+let store = null;
+if (process.env.NODE_ENV === "test") {
+    store = new SQLiteStore({
+        table: "sessions",
+        db: ":memory:",
+    });
+} else {
+    // SQLite needs a place to put its DB files before we get going.
+    // Once we start consolidating SQLite logic, this should stay with it.
+    const dbDir = path.join(__dirname, "../db");
 
-if (!fs.existsSync(dbDir)){
-    fs.mkdirSync(dbDir);
+    if (!fs.existsSync(dbDir)){
+        fs.mkdirSync(dbDir);
+    }
+
+    store = new SQLiteStore({
+        table: "sessions",
+        db: "sessions.sqlite",
+        dir: dbDir,
+    });
 }
+
 
 // Create Express server
 const app = express();
@@ -45,11 +60,7 @@ app.use(session({
     resave: true,
     saveUninitialized: true,
     secret: SESSION_SECRET,
-    store: new SQLiteStore({
-        table: "sessions",
-        db: "sessions.sqlite",
-        dir: dbDir,
-    }),
+    store,
 }));
 app.use(passport.initialize());
 app.use(passport.session());
