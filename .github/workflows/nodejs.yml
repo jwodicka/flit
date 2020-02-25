@@ -78,7 +78,7 @@ jobs:
       env:
         CI: true
 
-    build-client:
+    test-client:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v2
