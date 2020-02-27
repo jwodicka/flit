@@ -1,0 +1,36 @@
+type Query {
+    members(
+      pageSize: Int
+      after: String
+    ): MemberResult!
+    channels(
+      pageSize: Int
+      after: String
+    ): ChannelResult!
+    channel(id: ID!): Channel
+}
+
+type Mutation {
+    addChannel(name: String): Channel
+}
+
+type ChannelResult {
+  cursor: String!
+  hasMore: Boolean!
+  channels: [Channel]!
+}
+
+type MemberResult {
+  cursor: String!
+  hasMore: Boolean!
+  channels: [Member]!
+}
+
+type Member {
+  name: String
+}
+
+type Channel {
+  name: String
+  id: ID!
+}
