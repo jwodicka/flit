@@ -9,6 +9,8 @@ import flash from "express-flash";
 import fs from "fs";
 import path from "path";
 import passport from "passport";
+import { ApolloServer } from "apollo-server-express";
+import { typeDefs } from "./types/schema";
 import { SESSION_SECRET } from "./util/secrets";
 
 const SQLiteStore = connectSqlite(session);
@@ -77,6 +79,7 @@ app.use((req, res, next) => {
     req.path !== "/login" &&
     req.path !== "/signup" &&
     !req.path.match(/^\/auth/) &&
+    !req.path.match(/^\/graphql/) &&
     !req.path.match(/\./)) {
         req.session.returnTo = req.path;
     } else if (req.user &&
@@ -89,6 +92,14 @@ app.use((req, res, next) => {
 app.use(
     express.static(path.join(__dirname, "public"), { maxAge: 31557600000 })
 );
+
+/**
+ * GraphQL support
+ */
+const server = new ApolloServer({
+    typeDefs,
+});
+server.applyMiddleware({ app, path: "/graphql", });
 
 /**
  * Primary app routes.
