@@ -1,9 +1,9 @@
 import {
     Resolvers,
-    ChannelResolvers
-} from "../types/graphql";
+    MessageResult,
+} from "../types/generated/graphql";
 
-import {Chat} from "../models/Chat";
+import {Chat, MessageSet} from "../models/Chat";
 
 export class Context {
     models: { 
@@ -11,16 +11,16 @@ export class Context {
     };
 };
 
+function toGraphqlMessages(messageSet: MessageSet): MessageResult {
+    return new MessageResult(
+        cursor: messageSet.lastId
+    )
+}
 export const resolvers: Resolvers = {
     Query: {
-        members: (root, args, ctx) => {
-            return null;
-        },
-        channels: (root, args, ctx) => {
-           return null; 
-        },
-        channel: (root, {id}, ctx) => {
-            return ctx.chatModel.getMessages();
+        getMessages: (root, args, ctx) => {
+            const messages = ctx.chatModel.getMessages();
+            return toGraphqlMessages(messages);
         }
     }
 };
