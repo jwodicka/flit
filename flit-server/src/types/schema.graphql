@@ -1,3 +1,5 @@
+scalar Date
+
 type Query {
     getMessages(
       channelId: ID!
@@ -7,6 +9,7 @@ type Query {
 }
 
 type Mutation {
+  sendMessage(channelId: ID!, body: String): Message
 }
 
 type MessageResult {
