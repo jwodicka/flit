@@ -1,0 +1,41 @@
+.dialogLine {
+    display: grid;
+    background: #ffffff;
+    border: 1px solid gray;
+
+    width: 320px;
+
+    grid-template-columns: 36px 4fr 6fr;
+    grid-template-rows: 18px auto;
+}
+
+.face {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+}
+
+.name {
+    font-size: 10pt;
+    font-weight: 700;
+    background: #ddd;
+
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.timestamp {
+    font-size: 10pt;
+    background: #bbb;
+
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.line {
+    font-size: 10pt;
+
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+
+    text-align: start;
+}
