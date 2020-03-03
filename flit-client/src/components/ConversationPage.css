@@ -1,0 +1,64 @@
+.ConversationPage {
+   min-height: 100vh;
+   max-width: 500px;
+   display: flex;
+   flex-direction: column;
+   align-items: stretch;
+   justify-content: space-between;
+   background-color: white;
+   flex: auto;
+}
+
+.ConversationInfo {
+  display: flex;
+  flex: 0;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: lightgrey;
+}
+
+.ConversationInfo img {
+  border-radius: 100px;
+  background-color: #73FCD6;
+  margin: 2px;
+}
+
+.ConversationInfo a img:hover {
+  border: 1px solid black;
+  margin: 1px;
+}
+
+.ConversationName {
+  font-size: 120%;
+  font-weight: bold;
+  margin: 0.25rem 0.1rem;
+}
+
+.Conversation {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.InputBox {
+  flex: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: stretch;
+  border-top: 1px solid black;
+}
+
+.InputBox textarea {
+  padding: 0.5rem 0.25rem;
+  flex-grow: 1;
+  font-size: 1rem;
+  resize: none;
+  border: none;
+}
+.InputBox img {
+  flex-grow: 0;
+}

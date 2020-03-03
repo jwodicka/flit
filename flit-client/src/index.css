@@ -1,12 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Courier+Prime|Work+Sans&display=swap');
-
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: 'Courier Prime', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  background-color: #73FCD6;
+  font-family: 'Work Sans', sans-serif;
 }
