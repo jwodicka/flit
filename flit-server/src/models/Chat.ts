@@ -4,6 +4,7 @@
 
 export interface Chat {
     getMessages(count: number, after: string): MessageSet;
+    addMessage(body: string, senderId: string): Message;
 }
 export class Message {
     constructor(
@@ -66,6 +67,15 @@ export class StubChat {
         }
         result.hasMore = true;
         result.lastId = result.messages[count - 1].id;
+        return result;
+    }
+
+    addMessage(body: string, senderId: string): Message {
+        const result: Message = new Message(
+            "fake",
+            body,
+            new Date(),
+            senderId);
         return result;
     }
 };
