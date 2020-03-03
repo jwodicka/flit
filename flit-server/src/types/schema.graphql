@@ -1,15 +1,19 @@
 scalar Date
 
 type Query {
-    getMessages(
-      channelId: ID!
-      pageSize: Int
-      after: String
-    ): MessageResult!
+  getMessages(
+    channelId: ID!
+    pageSize: Int
+    after: String
+  ): MessageResult!
 }
 
 type Mutation {
-  sendMessage(channelId: ID!, body: String): Message
+  sendMessage(channelId: ID!, body: String, senderId: String): Message
+}
+
+type Subscription {
+  messageAdded(channelId: ID!): Message
 }
 
 type MessageResult {
