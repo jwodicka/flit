@@ -42,3 +42,6 @@ db/*
 
 # ignore yarn.lock
 yarn.lock
+
+# Ignore generated code
+generated
