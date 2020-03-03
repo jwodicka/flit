@@ -1,12 +1,10 @@
 import React from 'react';
-import face from './face.svg';
+import face from '../face.svg';
+import {Message} from '../types';
 import './DialogLine.css';
 
 type Props = {
-    // avatar: HTMLElement, // unused for now
-    name: string,
-    line: string,
-    timestamp: Date,
+    message: Message,
 }
 
 function makeTimestamp(stamp: Date):string {
@@ -25,13 +23,13 @@ export default function render(props: Props) {
             <img src={face} width={32} height={32} alt=''/>
         </div>
         <div className='name'>
-            {props.name}
+            {props.message.source?.name || '(unknown)'}
         </div>
         <div className='timestamp'>
-            {makeTimestamp(props.timestamp)}
+            {makeTimestamp(new Date(props.message.timestamp))}
         </div>
         <div className='line'>
-            {props.line}
+            {props.message.content}
         </div>
     </div>
 }
