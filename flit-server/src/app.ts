@@ -9,6 +9,7 @@ import flash from "express-flash";
 import fs from "fs";
 import path from "path";
 import passport from "passport";
+import http from "http";
 import { ApolloServer } from "apollo-server-express";
 import { SESSION_SECRET } from "./util/secrets";
 
@@ -110,6 +111,8 @@ const server = new ApolloServer({
     context
 });
 server.applyMiddleware({ app, path: "/graphql", });
+export const httpServer = http.createServer(app);
+server.installSubscriptionHandlers(httpServer);
 
 /**
  * Primary app routes.
