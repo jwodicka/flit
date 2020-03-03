@@ -1,5 +1,6 @@
 .ConversationPage {
    min-height: 100vh;
+   max-height: 100vh;
    max-width: 500px;
    display: flex;
    flex-direction: column;
@@ -31,12 +32,16 @@
 
 .ConversationName {
   font-size: 120%;
-  font-weight: bold;
+  font-weight: 600;
   margin: 0.25rem 0.1rem;
 }
 
 .Conversation {
   flex: 1;
+  overflow-y: scroll;
+}
+
+.Lines {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
