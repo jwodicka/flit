@@ -29,7 +29,7 @@
         "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run serve-debug\""
     },
     "dependencies": {
-        "apollo-server-express": "2.10.1",
+        "apollo-server-express": "2.11.0",
         "async": "3.2.0",
         "bcrypt-nodejs": "0.0.3",
         "body-parser": "1.19.0",
