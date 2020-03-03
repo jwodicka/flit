@@ -1,36 +1,26 @@
+scalar Date
+
 type Query {
-    members(
+    getMessages(
+      channelId: ID!
       pageSize: Int
       after: String
-    ): MemberResult!
-    channels(
-      pageSize: Int
-      after: String
-    ): ChannelResult!
-    channel(id: ID!): Channel
+    ): MessageResult!
 }
 
 type Mutation {
-    addChannel(name: String): Channel
+  sendMessage(channelId: ID!, body: String): Message
 }
 
-type ChannelResult {
+type MessageResult {
   cursor: String!
   hasMore: Boolean!
-  channels: [Channel]!
+  messages: [Message]!
 }
 
-type MemberResult {
-  cursor: String!
-  hasMore: Boolean!
-  channels: [Member]!
-}
-
-type Member {
-  name: String
-}
-
-type Channel {
-  name: String
+type Message {
+  senderId: String
+  body: String
+  when: Date
   id: ID!
 }

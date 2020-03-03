@@ -10,7 +10,6 @@ import fs from "fs";
 import path from "path";
 import passport from "passport";
 import { ApolloServer } from "apollo-server-express";
-import { typeDefs } from "./types/schema";
 import { SESSION_SECRET } from "./util/secrets";
 
 const SQLiteStore = connectSqlite(session);
@@ -20,7 +19,11 @@ import * as homeController from "./controllers/home";
 import * as userController from "./controllers/user";
 import * as apiController from "./controllers/api";
 import * as contactController from "./controllers/contact";
+import { Context, resolvers } from "./controllers/graphql-resolver";
 
+// models
+import { typeDefs } from "./types/schema";
+import { StubChat } from "./models/Chat";
 
 // API keys and Passport configuration
 import * as passportConfig from "./config/passport";
@@ -96,8 +99,15 @@ app.use(
 /**
  * GraphQL support
  */
+const context: Context = {
+    models: {
+        chatModel: new StubChat(),
+    }
+};
 const server = new ApolloServer({
     typeDefs,
+    resolvers,
+    context
 });
 server.applyMiddleware({ app, path: "/graphql", });
 
