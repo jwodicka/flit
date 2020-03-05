@@ -1,6 +1,6 @@
 import React from 'react';
 import face from './face.svg';
-import './DialogLine.css';
+import './styles.css';
 
 type Props = {
     // avatar: HTMLElement, // unused for now

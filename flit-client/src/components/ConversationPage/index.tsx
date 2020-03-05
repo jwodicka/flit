@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import DialogLine from './DialogLine';
-import logo from './hummingbird.svg';
+import DialogLine from '../DialogLine/';
+import logo from '../hummingbird.svg';
 import send from "./send.svg";
-import './ConversationPage.css';
+import './styles.css';
 
 // Grabbed some dialogue lines from "Captain Ben's Choice", here:
 // https://dev.gutenberg.org/files/15585/15585-h/15585-h.htm
@@ -34,7 +34,7 @@ timedLines.push({
   timestamp: new Date('2020-02-20T12:34Z'),
 });
 
-function ConversationPage() {
+export default function render() {
   return (
     <div className="ConversationPage">
       <div className="ConversationInfo">
@@ -60,5 +60,3 @@ function ConversationPage() {
     </div>
   );
 }
-
-export default ConversationPage;

@@ -4,8 +4,8 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import LandingPage from './components/LandingPage';
-import ConversationPage from './components/ConversationPage';
+import LandingPage from './components/LandingPage/';
+import ConversationPage from './components/ConversationPage/';
 import './App.css';
 
 function App() {
