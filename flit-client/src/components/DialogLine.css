@@ -2,9 +2,6 @@
     display: grid;
     background: #ffffff;
     border-bottom: 1px solid gray;
-
-    width: 320px;
-
     grid-template-columns: 36px 4fr 6fr;
     grid-template-rows: auto auto;
 }
