@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from './hummingbird.svg';
-import './LandingPage.css';
+import logo from '../hummingbird.svg';
+import './styles.css';
 
 function LandingPage() {
   return (
