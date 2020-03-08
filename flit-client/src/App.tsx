@@ -13,10 +13,10 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/conversation">
+          <Route path="/conversation/:cid">
             <ConversationPage />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <LandingPage />
           </Route>
         </Switch>
