@@ -1,5 +1,5 @@
 
-export const STATUS:{[index: string]:string} = {
+export const MSGSTATUS:{[index: string]:string} = {
     RECEIVED: "Received",
     SENT: "Sent",
     PENDING: "Pending",
