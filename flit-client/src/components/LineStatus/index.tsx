@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-import { STATUS } from 'stringConstants';
+import { MSGSTATUS } from 'exportedConstants';
 
 type Props = {
     status: string
@@ -8,19 +8,19 @@ type Props = {
 
 export default function render(props: Props) {
     switch(props.status) {
-        case STATUS.RECEIVED:
-            return <span className="lineActionButton">
+        case MSGSTATUS.RECEIVED:
+            return <React.Fragment>
                 &lt;&lt;
-                </span>
-        case STATUS.SENT:
-            return <span className="lineActionButton">
+                </React.Fragment>
+        case MSGSTATUS.SENT:
+            return <React.Fragment>
                 &gt;&gt;
-                </span>
-        case STATUS.PENDING:
-            return <span className="lineActionButton">
+                </React.Fragment>
+        case MSGSTATUS.PENDING:
+            return <React.Fragment>
                 ...
-                </span>
+                </React.Fragment>
         default:
-            return <span>???</span>
+            return <React.Fragment>???</React.Fragment>
     }
 }
