@@ -16,7 +16,6 @@ import { SESSION_SECRET } from "./util/secrets";
 const SQLiteStore = connectSqlite(session);
 
 // Controllers (route handlers)
-import * as homeController from "./controllers/home";
 import * as userController from "./controllers/user";
 import { Context, resolvers } from "./controllers/graphql-resolver";
 
@@ -115,7 +114,6 @@ server.installSubscriptionHandlers(httpServer);
 /**
  * Primary app routes.
  */
-app.get("/", homeController.index);
 app.get("/login", userController.getLogin);
 app.post("/login", userController.postLogin);
 app.get("/logout", userController.logout);
