@@ -11,7 +11,7 @@ export class User extends Model {
 
 User.init({
     id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER, // Could be unsigned, but SQLite warns that's ignored
         autoIncrement: true,
         primaryKey: true,
     },
