@@ -5,7 +5,7 @@ const getTransports = (nodeEnv: string) => {
         case "production":
             return [new winston.transports.Console({level: "warn"})];
         case "test":
-            return [];
+            return [new winston.transports.Console({level: "error"})];
         case "dev":
         case "development":
         default:
