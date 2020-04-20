@@ -1,13 +1,16 @@
 import React from 'react';
-import face from './face.svg';
 import './styles.css';
+import {FlitUser, FlitMessage} from 'exportedTypes';
+import LineStatus from 'components/LineStatus';
 
 type Props = {
-    // avatar: HTMLElement, // unused for now
-    name: string,
-    line: string,
-    timestamp: Date,
+    user: FlitUser,
+    msg: FlitMessage,
+    msgStatus: string,
+    own: boolean,
 }
+
+const avatarBase:string = `${process.env.PUBLIC_URL}/avatars`
 
 function makeTimestamp(stamp: Date):string {
     const now = new Date();
@@ -20,18 +23,26 @@ function makeTimestamp(stamp: Date):string {
 }
 
 export default function render(props: Props) {
+    let classNames:string = props.own ? "name ownName": "name"
+
+    console.log(props.user.avatar)
+    let avatar:string = props.user.avatar && props.user.avatar !== undefined && props.user.avatar !== "" ? `${avatarBase}/${props.user.avatar}` : `${avatarBase}/face.svg` 
+
     return <div className='dialogLine'>
         <div className='face'>
-            <img src={face} width={32} height={32} alt=''/>
+            <img src={avatar} width={32} height={32} alt=''/>
         </div>
-        <div className='name'>
-            {props.name}
+        <div className={classNames}>
+            {props.user.name}
+        </div>
+        <div className='status'>
+            <LineStatus status={props.msgStatus} />
         </div>
         <div className='timestamp'>
-            {makeTimestamp(props.timestamp)}
+            {makeTimestamp(props.msg.timestamp)}
         </div>
         <div className='line'>
-            {props.line}
+            {props.msg.content}
         </div>
     </div>
 }
