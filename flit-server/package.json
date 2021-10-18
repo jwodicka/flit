@@ -56,9 +56,9 @@
         "winston": "3.2.1"
     },
     "devDependencies": {
-        "@graphql-codegen/cli": "1.13.3",
-        "@graphql-codegen/typescript": "1.13.3",
-        "@graphql-codegen/typescript-resolvers": "1.13.3",
+        "@graphql-codegen/cli": "1.21.8",
+        "@graphql-codegen/typescript": "1.23.0",
+        "@graphql-codegen/typescript-resolvers": "1.20.0",
         "@types/async": "3.2.0",
         "@types/bcrypt-nodejs": "0.0.31",
         "@types/body-parser": "1.19.0",
