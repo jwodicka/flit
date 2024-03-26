@@ -37,7 +37,7 @@
         "connect-sqlite3": "0.9.11",
         "dotenv": "8.2.0",
         "errorhandler": "1.5.1",
-        "express": "4.17.1",
+        "express": "4.19.2",
         "express-flash": "0.0.2",
         "express-session": "1.17.1",
         "express-validator": "6.4.0",
